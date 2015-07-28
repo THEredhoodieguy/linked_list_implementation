@@ -28,6 +28,7 @@ class linked_list:
 			self.first = self.last = node
 		else:
 			self.first.before = node
+			node.after = self.first
 			self.first = node
 
 	def append(node):
@@ -35,6 +36,7 @@ class linked_list:
 			self.last = self.first = node
 		else:
 			self.last.after = node
+			node.before = self.last
 			self.last = node
 
 	def first():
