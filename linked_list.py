@@ -55,5 +55,15 @@ class linked_list:
 			return count
 
 	def index(number):
-		if(number >= 0):
-			while
+		if(number >= 0 and self.first != None):
+			node = self.first
+			count = 0
+			while(node.has_next):
+				node = node.after
+				count++
+			if(count == number):
+				return node
+			else:
+				return "Index out of bounds"
+		else:
+			return "Index out of bounds"
