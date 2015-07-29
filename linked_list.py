@@ -73,7 +73,7 @@ class linked_list:
 		else:
 			return "Index out of bounds"
 
-	def insert_before(sef, number, node):
+	def insert_before(self, number, node):
 		if(self.index(number) == "Index out of bounds"):
 			return "Index out of bounds"
 		else:
@@ -114,6 +114,12 @@ list_a.append(c)
 print("linked list a now has " + str(list_a.length()) + " element(s)")
 
 print("The zeroth item in the list is: " + str(list_a.index(0)))
+
+d = list_node(42.5)
+e = list_node(43.5)
+
+list_a.insert_after(1,e)
+list_a.insert_before(1,d)
 
 for x in range(0, list_a.length()):
 	print(str(list_a.index(x)))
