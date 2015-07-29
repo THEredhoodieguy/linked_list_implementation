@@ -9,10 +9,10 @@ class list_node:
 		self.before = before
 		self.after = after
 
-	def has_next():
+	def has_next(self):
 		return self.after != None
 
-	def has_previous():
+	def has_previous(self):
 		return self.before != None
 
 class linked_list:
@@ -23,7 +23,7 @@ class linked_list:
 		self.last = None
 
 
-	def prepend(node):
+	def prepend(self, node):
 		if(self.first == None and self.last == None):
 			self.first = self.last = node
 		else:
@@ -31,41 +31,54 @@ class linked_list:
 			node.after = self.first
 			self.first = node
 
-	def append(node):
-		if(self.last == None and self.first = None):
+	def append(self, node):
+		if(self.last == None and self.first == None):
 			self.last = self.first = node
 		else:
 			self.last.after = node
 			node.before = self.last
 			self.last = node
 
-	def first():
+	def first(self):
 		return self.first
 
-	def last():
+	def last(self):
 		return self.last
 
-	def length():
+	def length(self):
 		if(self.first == None and self.last == None):
 			return 0
 		else:
 			count = 1
 			node = self.first
 			while(node.has_next()):
-				count++
+				count =+ 1
 				node = node.after
 			return count
 
-	def index(number):
+	def index(self, number):
 		if(number >= 0 and self.first != None):
 			node = self.first
 			count = 0
 			while(node.has_next):
 				node = node.after
-				count++
+				count =+ 1
 			if(count == number):
 				return node
 			else:
 				return "Index out of bounds"
 		else:
 			return "Index out of bounds"
+
+
+a = list_node(42)
+b = list_node(43)
+print(a.has_next())
+print(b.has_previous())
+print(a.content)
+
+list_a = linked_list()
+list_a.prepend(a)
+list_a.append(b)
+print(a.has_next())
+print(b.has_previous())
