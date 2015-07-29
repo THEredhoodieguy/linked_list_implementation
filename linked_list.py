@@ -9,6 +9,9 @@ class list_node:
 		self.before = before
 		self.after = after
 
+	def __str__(self):
+		return str(self.content)
+
 	def has_next(self):
 		return self.after != None
 
@@ -52,7 +55,7 @@ class linked_list:
 			count = 1
 			node = self.first
 			while(node.has_next()):
-				count =+ 1
+				count += 1
 				node = node.after
 			return count
 
@@ -60,9 +63,9 @@ class linked_list:
 		if(number >= 0 and self.first != None):
 			node = self.first
 			count = 0
-			while(node.has_next):
+			while(node.has_next() and count < number):
 				node = node.after
-				count =+ 1
+				count += 1
 			if(count == number):
 				return node
 			else:
@@ -82,3 +85,10 @@ list_a.prepend(a)
 list_a.append(b)
 print(a.has_next())
 print(b.has_previous())
+
+print("linked list a has " + str(list_a.length()) + " element(s)")
+c = list_node(44)
+list_a.append(c)
+print("linked list a now has " + str(list_a.length()) + " element(s)")
+
+print("The zeroth item in the list is: " + str(list_a.index(0)))
