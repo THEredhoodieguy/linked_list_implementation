@@ -76,6 +76,8 @@ class linked_list:
 	def insert_before(self, number, node):
 		if(self.index(number) == "Index out of bounds"):
 			return "Index out of bounds"
+		elif(number == 0):
+			self.prepend(node)
 		else:
 			old_node = self.index(number)
 			old_node_before = old_node.before
@@ -87,6 +89,8 @@ class linked_list:
 	def insert_after(self, number, node):
 		if(self.index(number) == "Index out of bounds"):
 			return "Index out of bounds"
+		elif(number == self.length() - 1):
+			self.append(node)
 		else:
 			old_node = self.index(number)
 			old_node_after = old_node.after
